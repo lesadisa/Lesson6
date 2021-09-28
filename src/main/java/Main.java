@@ -2,8 +2,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.TreeMap;
+import java.util.stream.IntStream;
 
 public class Main {
 
@@ -39,7 +39,7 @@ public class Main {
 
 
         Parser parser = new Parser();
-        ArrayList<String> list=null;
+        ArrayList<String> list = null;
 
         File file = new File("voyna.txt");
 
@@ -52,6 +52,24 @@ public class Main {
 
         assert list != null;
         list.forEach(System.out::println);
+
+
+        //таблица умножения вариант 1
+        for (int i = 1; i <= 10; i++) {
+
+            for (int y = 1; y <= 10; y++) {
+                System.out.print(i * y + " ");
+            }
+            System.out.println();
+        }
+
+        //таблица умножения вариант 2
+        IntStream.rangeClosed(1, 10).forEach(i -> {
+            IntStream.rangeClosed(1, 10)
+                    .forEach(j -> System.out.print(i * j + " "));
+            System.out.println();
+        });
+
 
     }
 
