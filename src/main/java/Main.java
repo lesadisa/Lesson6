@@ -51,7 +51,7 @@ public class Main {
 
 
         assert list != null;
-        list.forEach(System.out::println);
+  //      list.forEach(System.out::println);
 
 
         //таблица умножения вариант 1
@@ -69,8 +69,44 @@ public class Main {
                     .forEach(j -> System.out.print(i * j + " "));
             System.out.println();
         });
+        String strsearch = "страда";
+/*       // String strnext = String.valueOf(list) + "";
 
 
+        if (0 == 1) {
+            System.out.println("ok");
+        } else {
+            //System.out.println(strLowecase.contains(strsearch));
+            System.out.println(strsearch.regionMatches(1, strnext, 1, 3));
+        }
+
+*/
+        /*
+
+
+Метод принимает следующие параметры:
+
+ignoreCase: надо ли игнорировать регистр символов при сравнении. Если значение true, регистр игнорируется
+
+toffset: начальный индекс в вызывающей строке, с которого начнется сравнение
+
+other: строка, с которой сравнивается вызывающая
+
+oofset: начальный индекс в сравниваемой строке, с которого начнется сравнение
+
+len: количество сравниваемых символов в обеих строках
+
+  System.out.println(strLowecase.getChars(1,5,strLowecase2,strnext))
+        Если надо извлечь сразу группу символов или подстроку, то можно использовать метод getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin). Он принимает следующие параметры:
+
+srcBegin: индекс в строке, с которого начинается извлечение символов
+
+srcEnd: индекс в строке, до которого идет извлечение символов
+
+dst: массив символов, в который будут извлекаться символы
+
+dstBegin: индекс в массиве dst, с которого надо добавлять извлеченные из строки символы
+         */
     }
 
 }
