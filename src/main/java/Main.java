@@ -1,4 +1,8 @@
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.TreeMap;
 
 public class Main {
@@ -18,22 +22,37 @@ public class Main {
         }
 
         System.out.println(hashMap.get(selectedString).getId());
-        if (hashMap.get(selectedString).getId().equals(selectedString)){
+        if (hashMap.get(selectedString).getId().equals(selectedString)) {
             System.out.println("TRUE");
-        }else {
+        } else {
             System.out.println("False");
         }
 
-        TreeMap<Integer,TestSubject> subjectTreeMap = new TreeMap<>(new TestComparator());
+        TreeMap<Integer, TestSubject> subjectTreeMap = new TreeMap<>(new TestComparator());
 
         for (int i = 0; i < 100; i++) {
 
             TestSubject subject = new TestSubject(i);
-subjectTreeMap.put(subject.getOrdinal(), subject);
-            }
+            subjectTreeMap.put(subject.getOrdinal(), subject);
+        }
         System.out.println(subjectTreeMap.lastEntry());
 
+
+        Parser parser = new Parser();
+        ArrayList<String> list=null;
+
+        File file = new File("voyna.txt");
+
+        try {
+            list = parser.parse(file);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
+
+        assert list != null;
+        list.forEach(System.out::println);
+
+    }
 
 }
