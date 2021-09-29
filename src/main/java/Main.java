@@ -71,19 +71,20 @@ public class Main {
             System.out.println();
         });
 
-        // поиск количеств вхождения
+     // поиск количеств вхождения
         System.out.println("Поиск количеств вхождения без класса Scanner");
         String strsearch = "страда";
         String[] strtext = String.valueOf(list).split("\\s");
         int z = 0;
         for (String s : strtext) {
             if (s.contains(strsearch)) {
-                System.out.println(s.contains(strsearch) + " " + s);
+                //   System.out.println(s.contains(strsearch) + " " + s);
                 z = z + 1;
             }
         }
         System.out.println(z);
+
+
     }
 }
-
 
