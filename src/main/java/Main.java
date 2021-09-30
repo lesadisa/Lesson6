@@ -1,59 +1,31 @@
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.TreeMap;
-import java.util.stream.IntStream;
 
 public class Main {
-
     public static void main(String[] args) {
-        HashMap<String, TestSubject> hashMap = new HashMap<>();
-        String selectedString = "";
 
-        for (int i = 0; i < 100; i++) {
+        Parser buffParse = new ParserViaBufferedReader();
+        var file = new File("voyna.txt");
 
-            TestSubject subject = new TestSubject(i);
-            hashMap.put(subject.getId(), subject);
-            if (i == 27) {
-                selectedString = subject.getId();
-            }
+        ArrayList<String> list = buffParse.parse(file);
 
-        }
-
-        System.out.println(hashMap.get(selectedString).getId());
-        if (hashMap.get(selectedString).getId().equals(selectedString)) {
-            System.out.println("TRUE");
-        } else {
-            System.out.println("False");
-        }
-
-        TreeMap<Integer, TestSubject> subjectTreeMap = new TreeMap<>(new TestComparator());
-
-        for (int i = 0; i < 100; i++) {
-
-            TestSubject subject = new TestSubject(i);
-            subjectTreeMap.put(subject.getOrdinal(), subject);
-        }
-        System.out.println(subjectTreeMap.lastEntry());
+        list.forEach(System.out::println);
+        System.out.println("======");
+        System.out.println(list.size());
 
 
-        Parser parser = new Parser();
-        ArrayList<String> list = null;
-
-        File file = new File("voyna.txt");
-
-        try {
-            list = parser.parse(file);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
 
-        assert list != null;
-        //      list.forEach(System.out::println);
 
-        //таблица умножения вариант 1
+
+
+
+
+
+
+
+
+ /*        //таблица умножения вариант 1
         System.out.println("Таблица умножения вариант 1");
         for (int i = 1; i <= 10; i++) {
 
@@ -71,7 +43,7 @@ public class Main {
             System.out.println();
         });
 
-     // поиск количеств вхождения
+    // поиск количеств вхождения
         System.out.println("Поиск количеств вхождения без класса Scanner");
         String strsearch = "страда";
         String[] strtext = String.valueOf(list).split("\\s");
@@ -82,7 +54,7 @@ public class Main {
                 z = z + 1;
             }
         }
-        System.out.println(z);
+        System.out.println(z);  */
 
 
     }
